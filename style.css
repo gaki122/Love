@@ -1,0 +1,229 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #e8d5ff,
+        #ffe6f0
+    );
+    color: #713c62;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 720px;
+    margin: auto;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.top-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.small-text {
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 15px 0;
+    color: #bd4e83;
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(160, 70, 120, 0.15);
+    text-align: left;
+    line-height: 1.9;
+}
+
+.letter-icon {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.letter h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #bd4e83;
+}
+
+.letter p {
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.signature {
+    margin-top: 25px;
+    text-align: right;
+    line-height: 2;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#surpriseBtn {
+    background: #c44d88;
+    color: white;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px #d995b7;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+.hidden {
+    display: none;
+}
+
+#surprise {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    animation: appear 0.7s ease;
+}
+
+.big-heart {
+    font-size: 55px;
+    margin-top: 15px;
+}
+
+.question {
+    margin-top: 50px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+}
+
+.question-heart {
+    font-size: 55px;
+}
+
+.question h2 {
+    margin: 15px 0;
+}
+
+.miss-question {
+    font-size: 36px;
+    color: #d63384;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#yesBtn {
+    background: #e75491;
+    color: white;
+}
+
+#ofCourseBtn {
+    background: #a77be8;
+    color: white;
+}
+
+.answer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c03975;
+    margin-top: 25px;
+    line-height: 1.7;
+}
+
+footer {
+    margin-top: 45px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatUp 7s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .letter {
+        padding: 25px;
+    }
+
+    .miss-question {
+        font-size: 29px;
+    }
+
+    .question {
+        padding: 30px 15px;
+    }
+}
