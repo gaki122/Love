@@ -10,11 +10,11 @@ body {
     min-height: 100vh;
     background: linear-gradient(
         135deg,
-        #ffd6e7,
-        #e8d5ff,
-        #ffe6f0
+        #d8f1ff,
+        #eef9ff,
+        #dce9ff
     );
-    color: #713c62;
+    color: #315477;
     overflow-x: hidden;
 }
 
@@ -47,7 +47,7 @@ body {
 h1 {
     font-size: 42px;
     margin: 15px 0;
-    color: #bd4e83;
+    color: #3979a8;
 }
 
 .subtitle {
@@ -60,7 +60,7 @@ h1 {
     background: rgba(255, 255, 255, 0.85);
     padding: 40px;
     border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(160, 70, 120, 0.15);
+    box-shadow: 0 10px 35px rgba(61, 126, 171, 0.15);
     text-align: left;
     line-height: 1.9;
 }
@@ -74,7 +74,7 @@ h1 {
 .letter h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #bd4e83;
+    color: #3979a8;
 }
 
 .letter p {
@@ -88,6 +88,178 @@ h1 {
     line-height: 2;
 }
 
+.memories {
+    margin-top: 40px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0 10px 35px rgba(61, 126, 171, 0.12);
+}
+
+.memories-eyebrow {
+    color: #547fa0;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.memories h2 {
+    margin: 10px 0 8px;
+    color: #3979a8;
+    font-size: 32px;
+}
+
+.memories h2 span {
+    color: #62a9d8;
+}
+
+.memories-intro {
+    margin-bottom: 25px;
+    color: #54718a;
+    line-height: 1.6;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    text-align: left;
+}
+
+.memory-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fafdff;
+    border: 1px solid #d9edf8;
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(61, 126, 171, 0.08);
+}
+
+.memory-photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #e4f3fc;
+    border-radius: 0;
+}
+
+.memory-photo img,
+.memory-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.memory-card--bottom-focus .memory-photo img {
+    object-position: center 72%;
+}
+
+.memory-view {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 10px;
+    color: white;
+    background: rgba(61, 31, 49, 0.58);
+    border-radius: 20px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.memory-photo:hover .memory-view,
+.memory-photo:focus-visible .memory-view {
+    opacity: 1;
+}
+
+.memory-card figcaption {
+    padding: 13px 15px 16px;
+    color: #315477;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.memory-date {
+    display: block;
+    margin-bottom: 4px;
+    color: #3979a8;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.memory-video {
+    grid-column: 1 / -1;
+}
+
+.memory-video video {
+    aspect-ratio: 16 / 9;
+    background: #281d25;
+    object-fit: contain;
+}
+
+.memory-dialog {
+    width: min(92vw, 850px);
+    max-width: none;
+    max-height: 90vh;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+}
+
+.memory-dialog::backdrop {
+    background: rgba(35, 18, 30, 0.82);
+    backdrop-filter: blur(5px);
+}
+
+.memory-dialog-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.memory-dialog-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 88vh;
+    border: 5px solid white;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+}
+
+.memory-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: #315477;
+    background: white;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 button {
     border: none;
     border-radius: 30px;
@@ -99,10 +271,10 @@ button {
 }
 
 #surpriseBtn {
-    background: #c44d88;
+    background: #438dbc;
     color: white;
     margin: 30px 0;
-    box-shadow: 0 5px 15px #d995b7;
+    box-shadow: 0 5px 15px rgba(67, 141, 188, 0.35);
 }
 
 button:hover {
@@ -114,7 +286,7 @@ button:hover {
 }
 
 #surprise {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
     margin-bottom: 40px;
@@ -129,7 +301,7 @@ button:hover {
 .question {
     margin-top: 50px;
     padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.72);
     border-radius: 30px;
 }
 
@@ -143,7 +315,7 @@ button:hover {
 
 .miss-question {
     font-size: 36px;
-    color: #d63384;
+    color: #438dbc;
 }
 
 .buttons {
@@ -155,19 +327,19 @@ button:hover {
 }
 
 #yesBtn {
-    background: #e75491;
+    background: #438dbc;
     color: white;
 }
 
 #ofCourseBtn {
-    background: #a77be8;
+    background: #7199d4;
     color: white;
 }
 
 .answer {
     font-size: 20px;
     font-weight: bold;
-    color: #c03975;
+    color: #3979a8;
     margin-top: 25px;
     line-height: 1.7;
 }
@@ -181,10 +353,81 @@ footer {
 .heart {
     position: fixed;
     bottom: -30px;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
     font-size: 20px;
+    color: #458fbd;
+    background: rgba(255, 255, 255, 0.57);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+    border-radius: 50%;
+    box-shadow: inset -3px -4px 8px rgba(74, 151, 196, 0.1),
+        0 4px 14px rgba(69, 143, 189, 0.12);
     animation: floatUp 7s linear infinite;
     pointer-events: none;
     z-index: 1;
+}
+
+.love-note {
+    margin-top: 42px;
+    padding: 34px 26px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(226, 244, 255, 0.92));
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(61, 126, 171, 0.15);
+}
+
+.love-note-icon {
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.love-note h2 {
+    margin: 10px 0;
+    color: #3979a8;
+    font-size: 30px;
+}
+
+.love-note-intro {
+    margin-bottom: 20px;
+    color: #54718a;
+    line-height: 1.7;
+}
+
+.love-note-button {
+    color: white;
+    background: linear-gradient(135deg, #438dbc, #7199d4);
+    box-shadow: 0 6px 16px rgba(67, 141, 188, 0.28);
+}
+
+.love-note-message {
+    max-width: 470px;
+    margin: 24px auto 0;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #d9edf8;
+    border-radius: 20px;
+    animation: appear 0.7s ease;
+}
+
+.love-note-from {
+    color: #3979a8;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.love-note-words {
+    margin-top: 12px;
+    color: #315477;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.love-note-hearts {
+    margin-top: 12px;
+    font-size: 22px;
 }
 
 @keyframes floatUp {
@@ -225,5 +468,46 @@ footer {
 
     .question {
         padding: 30px 15px;
+    }
+
+    .memories {
+        padding: 24px 16px;
+    }
+
+    .memories h2 {
+        font-size: 28px;
+    }
+
+    .memory-grid {
+        gap: 12px;
+    }
+
+    .memory-card figcaption {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .memory-view {
+        opacity: 1;
+        font-size: 10px;
+    }
+
+    .love-note {
+        padding: 28px 18px;
+    }
+
+    .love-note h2 {
+        font-size: 26px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
